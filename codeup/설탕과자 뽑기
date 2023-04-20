@@ -1,0 +1,23 @@
+# d =0:  가로 , 세로는 1
+h,w= map(int,input().split())
+n=int(input())
+graph=[[0]*w for _ in range(h)]
+for i in range(n):
+    l,d,x,y = map(int,input().split())
+    x=x-1
+    y=y-1
+    if d==0: #가로일 경우
+        for j in range(l):
+            graph[x][y]=1
+            y=y+1
+
+    else: # 세로일 경우
+        for k in range(l):
+            graph[x][y]=1
+            x=x+1
+for g in range(h):
+    for k in  range(w):
+        print(graph[g][k], end = ' ')
+    print()
+
+
