@@ -1,0 +1,22 @@
+graph = [list(map(int, input().split())) for _ in range(19)]
+n = int(input())
+for i in range(n):  # 횟수
+    x, y = map(int, input().split())
+    for j in range(19):
+        for k in range(19):
+            if k == y-1:  # 가로일 경우
+                if graph[j][k] == 1:
+                    graph[j][k] = 0
+                else:
+                    graph[j][k] = 1
+    for a in range(19):
+        for b in range(19):
+            if a == x-1:  # 세로일 경우
+                if graph[a][b] == 1:
+                    graph[a][b] = 0
+                else:
+                    graph[a][b] = 1
+for p in range(19):
+    for z in range(19):
+        print(graph[p][z], end=' ')
+    print()
