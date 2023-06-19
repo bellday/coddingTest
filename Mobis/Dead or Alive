@@ -1,0 +1,19 @@
+n=  int(input())
+car_info = {}
+Check = []
+SumCarNum = 0
+for i in range(n):
+	v,w = map(int,input().split())
+	if v not in car_info:
+		car_info[v] = (w,i+1)
+		
+	elif w > car_info[v][0]:
+		car_info[v] = (w,i+1)
+		
+	elif w == car_info[v][0]:
+		car_info[v] = (w,i+1)
+		
+for car ,val in car_info.items():
+	
+	SumCarNum += val[1]
+print(SumCarNum)
